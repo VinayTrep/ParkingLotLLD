@@ -3,19 +3,17 @@ package models;
 import models.enums.BillStatus;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Bill extends BaseClass{
 
-    private int billNumber;
     private Ticket ticket;
     private double amount;
     private LocalDateTime exitTime;
     private Gate exitGate;
     private BillStatus billStatus;
 
-    public Bill(int billNumber, Ticket ticket, double amount, LocalDateTime exitTime, Gate exitGate, BillStatus billStatus) {
-
-        this.billNumber = billNumber;
+    public Bill(Ticket ticket, double amount, LocalDateTime exitTime, Gate exitGate, BillStatus billStatus) {
         this.ticket = ticket;
         this.amount = amount;
         this.exitTime = exitTime;
@@ -26,12 +24,16 @@ public class Bill extends BaseClass{
     public Bill() {
     }
 
-    public int getBillNumber() {
-        return billNumber;
-    }
-
-    public void setBillNumber(int billNumber) {
-        this.billNumber = billNumber;
+    @Override
+    public String toString() {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return "Bill{" +
+                "\nticket=" + ticket.getId() +
+                ",\n amount=" + amount +
+                ",\n exitTime=" + exitTime.format(dateTimeFormatter) +
+                ",\n exitGate=" + exitGate.getGateNumber() +
+                ",\n billStatus=" + billStatus +
+                "\n}";
     }
 
     public Ticket getTicket() {

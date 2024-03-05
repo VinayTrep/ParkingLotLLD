@@ -1,7 +1,7 @@
 package models;
 
 import models.enums.ParkingLotStatus;
-import models.enums.VehicalType;
+import models.enums.VehicleType;
 import services.Strategy.BillGenerationStrategy.BillGenerationStrategy;
 import services.Strategy.SpotAllocationStrategy.SpotAllocationStrategy;
 
@@ -13,12 +13,12 @@ public class ParkingLot extends BaseClass{
     private String address;
     private List<ParkingFloor> parkingFloors;
     private int capacity;
-    private List<VehicalType> vehicalTypeSupported;
+    private List<VehicleType> vehicalTypeSupported;
     private ParkingLotStatus parkingLotStatus;
     private SpotAllocationStrategy spotAllocationStrategy;
     private BillGenerationStrategy billGenerationStrategy;
 
-    public ParkingLot(String name, String address, List<ParkingFloor> parkingFloors, int capacity, List<VehicalType> vehicalTypeSupported, ParkingLotStatus parkingLotStatus, SpotAllocationStrategy spotAllocationStrategy, BillGenerationStrategy billGenerationStrategy) {
+    public ParkingLot(String name, String address, List<ParkingFloor> parkingFloors, int capacity, List<VehicleType> vehicalTypeSupported, ParkingLotStatus parkingLotStatus, SpotAllocationStrategy spotAllocationStrategy, BillGenerationStrategy billGenerationStrategy) {
         this.name = name;
         this.address = address;
         this.parkingFloors = parkingFloors;
@@ -64,11 +64,11 @@ public class ParkingLot extends BaseClass{
         this.capacity = capacity;
     }
 
-    public List<VehicalType> getVehicalTypeSupported() {
+    public List<VehicleType> getVehicalTypeSupported() {
         return vehicalTypeSupported;
     }
 
-    public void setVehicalTypeSupported(List<VehicalType> vehicalTypeSupported) {
+    public void setVehicalTypeSupported(List<VehicleType> vehicalTypeSupported) {
         this.vehicalTypeSupported = vehicalTypeSupported;
     }
 

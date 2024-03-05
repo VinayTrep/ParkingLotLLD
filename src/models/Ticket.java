@@ -1,29 +1,32 @@
 package models;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Ticket extends BaseClass{
-    private int ticketNo;
     private LocalDateTime entryTime;
-    private Vehical vehical;
+    private Vehicle vehicle;
     private Gate entryGate;
     private ParkingSpot parkingSpot;
 
-    public Ticket(int ticketNo, LocalDateTime entryTime, Vehical vehical, Gate entryGate, ParkingSpot parkingSpot) {
-        this.ticketNo = ticketNo;
+    public Ticket( LocalDateTime entryTime, Vehicle vehicle, Gate entryGate, ParkingSpot parkingSpot) {
         this.entryTime = entryTime;
-        this.vehical = vehical;
+        this.vehicle = vehicle;
         this.entryGate = entryGate;
         this.parkingSpot = parkingSpot;
     }
     public Ticket(){}
 
-    public int getTicketNo() {
-        return ticketNo;
-    }
-
-    public void setTicketNo(int ticketNo) {
-        this.ticketNo = ticketNo;
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        return "Ticket{ \n" +
+                "TicketId=" + getId() +
+                "\n entryTime=" + entryTime.format(formatter) +
+                ",\n vehicle=" + vehicle.getVehicleNumber() +
+                ",\n entryGate=" + entryGate.getGateNumber() +
+                "\n, parkingSpot=" + parkingSpot.getSpotNumber() +
+                "\n}";
     }
 
     public LocalDateTime getEntryTime() {
@@ -34,12 +37,12 @@ public class Ticket extends BaseClass{
         this.entryTime = entryTime;
     }
 
-    public Vehical getVehical() {
-        return vehical;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
-    public void setVehical(Vehical vehical) {
-        this.vehical = vehical;
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     public Gate getEntryGate() {

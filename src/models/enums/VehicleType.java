@@ -1,5 +1,5 @@
 package models.enums;
 
-public enum VehicalType {
+public enum VehicleType {
     BIKE,CAR,LUXE,EV
 }

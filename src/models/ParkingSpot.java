@@ -1,19 +1,19 @@
 package models;
 
 import models.enums.ParkingSpotStatus;
-import models.enums.VehicalType;
+import models.enums.VehicleType;
 
 public class ParkingSpot extends BaseClass {
 
     private int spotNumber;
-    private VehicalType vehicalType;
-    private Vehical vehical;
+    private VehicleType vehicleType;
+    private Vehicle vehicle;
     private ParkingSpotStatus parkingSpotStatus;
 
-    public ParkingSpot(int spotNumber, VehicalType vehicalType, Vehical vehical, ParkingSpotStatus parkingSpotStatus) {
+    public ParkingSpot(int spotNumber, VehicleType vehicleType, Vehicle vehicle, ParkingSpotStatus parkingSpotStatus) {
         this.spotNumber = spotNumber;
-        this.vehicalType = vehicalType;
-        this.vehical = vehical;
+        this.vehicleType = vehicleType;
+        this.vehicle = vehicle;
         this.parkingSpotStatus = parkingSpotStatus;
     }
     public ParkingSpot(){
@@ -28,20 +28,20 @@ public class ParkingSpot extends BaseClass {
         this.spotNumber = spotNumber;
     }
 
-    public VehicalType getVehicalType() {
-        return vehicalType;
+    public VehicleType getVehicleType() {
+        return vehicleType;
     }
 
-    public void setVehicalType(VehicalType vehicalType) {
-        this.vehicalType = vehicalType;
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
-    public Vehical getVehical() {
-        return vehical;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
-    public void setVehical(Vehical vehical) {
-        this.vehical = vehical;
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     public ParkingSpotStatus getParkingSpotStatus() {
